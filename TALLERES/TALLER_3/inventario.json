@@ -1,0 +1,62 @@
+[
+    {
+        "nombre": "Laptop",
+        "precio": 999.99,
+        "cantidad": 10
+    },
+    {
+        "nombre": "Smartphone",
+        "precio": 499.50,
+        "cantidad": 15
+    },
+    {
+        "nombre": "Auriculares",
+        "precio": 79.99,
+        "cantidad": 3
+    },
+    {
+        "nombre": "Tableta",
+        "precio": 299.99,
+        "cantidad": 3
+    },
+    {
+        "nombre": "Teclado Mecánico",
+        "precio": 120.00,
+        "cantidad": 7
+    },
+    {
+        "nombre": "Mouse Inalámbrico",
+        "precio": 35.50,
+        "cantidad": 2
+    },
+    {
+        "nombre": "Monitor 24 pulgadas",
+        "precio": 189.99,
+        "cantidad": 1
+    },
+    {
+        "nombre": "Impresora",
+        "precio": 149.99,
+        "cantidad": 5
+    },
+    {
+        "nombre": "Cámara Web HD",
+        "precio": 59.99,
+        "cantidad": 0
+    },
+    {
+        "nombre": "Disco Duro Externo 1TB",
+        "precio": 89.99,
+        "cantidad": 9
+    },
+    {
+        "nombre": "Memoria USB 64GB",
+        "precio": 15.00,
+        "cantidad": 5
+    },
+    {
+        "nombre": "Silla Ergonómica",
+        "precio": 229.99,
+        "cantidad": 4
+    }
+]
