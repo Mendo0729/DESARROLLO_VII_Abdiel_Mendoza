@@ -1,5 +1,5 @@
 <?php
-require_once 'Libro3.php';
+require_once 'Libro.php';
 
 class LibroDigital extends Libro {
     private $formatoArchivo;
