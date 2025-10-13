@@ -48,7 +48,7 @@ $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
         <input type="text" id="usuario" name="usuario" required><br><br>
         <label for="contrasena">Contraseña:</label><br>
         <input type="password" id="contrasena" name="contrasena" required><br><br>
-        <!--<input type="hidden" name="csrf_token" value="<//?php echo $_SESSION['csrf_token']; ?>"-->
+        <!--<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>"-->
         <input type="submit" value="Iniciar Sesión">
     </form>
 </body>

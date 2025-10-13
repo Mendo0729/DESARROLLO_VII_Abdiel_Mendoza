@@ -10,5 +10,6 @@ session_start();
 if (!isset($_SESSION['ultima_actividad']) || (time() - $_SESSION['ultima_actividad'] > 300)) {
     session_regenerate_id(true);
     $_SESSION['ultima_actividad'] = time();
+    //
 }
 ?>
