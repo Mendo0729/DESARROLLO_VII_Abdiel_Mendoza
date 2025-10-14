@@ -9,7 +9,7 @@ check_csrf();
 $catalogo = get_productos_catalogo();
 $carrito = $_SESSION['carrito'] ?? [];
 if (empty($carrito)) {
-    $_SESSION['flash_error'] = 'El carrito está vacío.';
+    $_SESSION['error'] = 'El carrito está vacío.';
     header('Location: ver_carrito.php');
     exit;
 }
