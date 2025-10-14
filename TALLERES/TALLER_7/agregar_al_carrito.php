@@ -10,7 +10,7 @@ $id = isset($_POST['id']) ? (int)$_POST['id'] : 0;
 $cantidad = validar_entero($_POST['cantidad'] ?? 0);
 
 if (!producto_valido($id) || !$cantidad) {
-    $_SESSION['flash_error'] = 'Producto o cantidad inválida.';
+    $_SESSION['error'] = 'Producto o cantidad inválida.';
     header('Location: productos.php');
     exit;
 }
@@ -20,7 +20,7 @@ if (!isset($_SESSION['carrito'][$id])) {
 }
 $_SESSION['carrito'][$id] += $cantidad;
 
-$_SESSION['flash_success'] = 'Producto agregado al carrito.';
+$_SESSION['Exito'] = 'Producto agregado al carrito.';
 header('Location: ver_carrito.php');
 exit;
 ?>
