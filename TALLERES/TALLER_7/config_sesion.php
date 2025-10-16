@@ -14,14 +14,6 @@ if (!isset($_SESSION['ultima_actividad']) || (time() - $_SESSION['ultima_activid
     //
 }
 */
-// Configurar las cookies de sesión (sin HTTPS)
-session_set_cookie_params([
-'lifetime' => 0,
-'path' => '/',
-'secure' => false,
-'httponly' => true,
-'samesite' => 'Lax'
-]);
 
 session_start();
 
