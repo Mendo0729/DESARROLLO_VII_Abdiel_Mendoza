@@ -28,7 +28,6 @@ foreach ($carrito as $id => $cant) {
 
 if (!empty($_POST['nombre'])) {
     $nombre_limpio = trim($_POST['nombre']);
-    $nombre_limpio = strip_tags($nombre_limpio);
     setcookie('tienda_nombre_usuario', $nombre_limpio, [
         'expires' => time() + 86400,
         'path' => '/',
