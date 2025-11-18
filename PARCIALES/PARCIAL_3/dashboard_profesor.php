@@ -20,17 +20,10 @@ foreach ($calificaciones as $usuario => $data) {
         'ingles'      => $data['materias'][3]['calificacion'],
     ];
 
-    $fila['promedio'] = round(
-        ($fila['matematicas'] + $fila['ciencias'] + $fila['historia'] + $fila['ingles']) / 4,
-        1
-    );
-
     $calificaciones_profesor[] = $fila;
 }
 
 $total_estudiantes = count($calificaciones_profesor);
-$promedio_general = round(array_sum(array_column($calificaciones_profesor, 'promedio')) / $total_estudiantes, 1);
-$nota_mas_alta = max(array_column($calificaciones_profesor, 'promedio'));
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -52,8 +45,6 @@ $nota_mas_alta = max(array_column($calificaciones_profesor, 'promedio'));
 
     <div>
         <p><strong>Total de Estudiantes:</strong> <?php echo $total_estudiantes; ?></p>
-        <p><strong>Promedio General:</strong> <?php echo $promedio_general; ?></p>
-        <p><strong>Promedio Más Alto:</strong> <?php echo $nota_mas_alta; ?></p>
         <p><strong>Materias Registradas:</strong> 4</p>
     </div>
 
@@ -68,7 +59,6 @@ $nota_mas_alta = max(array_column($calificaciones_profesor, 'promedio'));
                 <th>Ciencias</th>
                 <th>Historia</th>
                 <th>Inglés</th>
-                <th>Promedio</th>
             </tr>
         </thead>
         <tbody>
@@ -80,7 +70,6 @@ $nota_mas_alta = max(array_column($calificaciones_profesor, 'promedio'));
                     <td><?php echo $cal['ciencias']; ?></td>
                     <td><?php echo $cal['historia']; ?></td>
                     <td><?php echo $cal['ingles']; ?></td>
-                    <td><?php echo $cal['promedio']; ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
