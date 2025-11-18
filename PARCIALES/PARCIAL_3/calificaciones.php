@@ -1,6 +1,5 @@
 <?php
 
-// Base centralizada de calificaciones
 $calificaciones = [
     'abdiel2907' => [
         'nombre' => 'Abdiel Mendoza',
