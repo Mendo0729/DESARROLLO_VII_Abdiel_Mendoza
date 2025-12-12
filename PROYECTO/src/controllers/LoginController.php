@@ -9,6 +9,10 @@ function loginUsuario(string $username, string $password): array {
     $password = trim($password);
 
     if (!is_string($username) || !is_string($password) || $username === '' || $password === '') {
+        return [
+            'message' => 'Los campos son obligatorios y deben ser texto',
+            'errors' => ['code' => 'empty_fields', 'detail' => 'Los campos son requeridos']
+        ];
     }
 
     try {
@@ -25,9 +29,7 @@ function loginUsuario(string $username, string $password): array {
         $_SESSION['user_id'] = $row['id'];
         $_SESSION['username'] = $row['usuario'];
         error_log("Usuario autenticado exitosamente: $username");
-
         return [
-            'success' => true,
             'message' => 'Usuario autenticado exitosamente',
             'data' => ['id' => $row['id'], 'usuario' => $row['usuario']]
         ];
