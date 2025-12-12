@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../database/database.php'; // Ajusta la ruta a tu co
 try {
     $pdo = getPDO();
 
-    $usuario = 'admin';
+    $usuario = 'abdiel';
     $password = '123456';
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
 

@@ -10,8 +10,8 @@ if (!isset($_SESSION['user_id'])) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard - Mi ERP</title>
-        <style>
+    <title>Casita Bakery - Dashboard</title>
+    <style>
         /* Reset básico */
         * {
             margin: 0;
@@ -30,9 +30,9 @@ if (!isset($_SESSION['user_id'])) {
             color: #fff;
             padding: 20px 40px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             border-bottom-left-radius: 12px;
             border-bottom-right-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         header h1 {
@@ -40,10 +40,17 @@ if (!isset($_SESSION['user_id'])) {
             font-weight: 600;
         }
 
+        .welcome {
+            margin: 20px auto;
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+        }
+
         nav {
-            margin: 30px auto;
+            margin: 20px auto;
             width: 90%;
-            max-width: 600px;
+            max-width: 800px;
             text-align: center;
         }
 
@@ -75,35 +82,79 @@ if (!isset($_SESSION['user_id'])) {
             transform: translateY(-3px);
         }
 
-        main {
-            margin: 20px auto;
-            width: 90%;
-            max-width: 600px;
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px auto;
+            max-width: 900px;
+        }
+
+        .card {
+            flex: 1 1 200px;
             background: #fff;
-            padding: 30px;
+            padding: 20px;
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        main p {
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .card h2 {
+            font-size: 36px;
+            color: #2575fc;
+            margin-bottom: 10px;
+        }
+
+        .card p {
             font-size: 16px;
             color: #555;
         }
+
     </style>
 </head>
 <body>
-    <h1>Bienvenido, <?= htmlspecialchars($_SESSION['username']) ?></h1>
+    <header>
+        <h1>Casita Bakery</h1>
+    </header>
+
+    <div class="welcome">
+        Bienvenido, <?= htmlspecialchars($_SESSION['username']) ?>
+    </div>
 
     <nav>
         <ul>
             <li><a href="clientes/listarClientes.php">Listar Clientes</a></li>
             <li><a href="productos/listarProductos.php">Listar Productos</a></li>
             <li><a href="pedidos/listarPedidos.php">Listar Pedidos</a></li>
+            <li><a href=#>Listar Usuarios</a></li>
             <li><a href="usuarios/logout.php">Cerrar sesión</a></li>
         </ul>
     </nav>
 
-    <p>Selecciona una opción del menú para continuar.</p>
+    <div class="cards-container">
+        <div class="card">
+            <h2>120</h2>
+            <p>Clientes registrados</p>
+        </div>
+        <div class="card">
+            <h2>80</h2>
+            <p>Productos disponibles</p>
+        </div>
+        <div class="card">
+            <h2>45</h2>
+            <p>Pedidos activos</p>
+        </div>
+        <div class="card">
+            <h2>5</h2>
+            <p>Pedidos pendientes de entrega</p>
+        </div>
+    </div>
 </body>
 </html>
